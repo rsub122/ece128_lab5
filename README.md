@@ -1,22 +1,24 @@
-ECE128-FPGA-LAB5
+# ECE128 Lab 5
 
-The purpose of this lab was to design and test common sequential logic circuits in Verilog. The designs include an SR latch, SR flip-flop, positive-edge D flip-flops with synchronous and asynchronous reset, a T flip-flop, a 3-bit counter built from T flip-flops, and a 25 MHz clock divider. A testbench is included to simulate the circuits. A constraint file is also included to map the Basys3 100 MHz clock, switches, center push button, and LEDs for FPGA implementation.
+The purpose of this lab is to design and simulate common sequential logic circuits in Verilog. The designs include an SR latch, SR flip-flop, positive-edge D flip-flops with synchronous and asynchronous reset, a T flip-flop, a 3-bit counter using T flip-flops, and a 25 MHz clock divider.
 
-Run Instructions,
-Create a new project, selecting the Basys3 board
-Add the design files under the design folder: SR_Latch, SR_FF, DFF_Sync, DFF_Async, TFF, Counter3Bit, ClockDivider, Lab5_Top
-Add tb_lab5 under the simulation folder
-Add Basys-3-Master.xdc under the constraint folder
-Run Simulation
-Run Synthesis
-Run Implementation
-Run Generate Bitstream
-Find the device and program
+Each design has its own testbench so the waveform can be simulated and analyzed separately.
 
-Board Mapping,
-SW0 = first input
-SW1 = second input
-BTNC = reset
-LED0-LED3 = outputs used by Lab5_Top
+## Files
+- SR_Latch.v / SR_Latch_TB.v
+- SR_FlipFlop.v / SR_FlipFlop_TB.v
+- DFlipFlop_sync.v / DFlipFlop_sync_TB.v
+- DFlipFlop_async.v / DFlipFlop_async_TB.v
+- TFlipFlopCounter.v / TFlipFlopCounter_TB.v
+- Counter3_TFlipFlop.v / Counter3_TB.v
+- clockdivider.v / clockdivider_TB.v
 
-Lab5_Top is currently set up to demonstrate the SR latch. To demonstrate a different design on the board, replace the instantiated circuit in Lab5_Top with the desired Lab 5 module and map its output to the LEDs.
+## Run Instructions
+1. Create a new Vivado project.
+2. Add the desired design file under Design Sources.
+3. Add its matching testbench under Simulation Sources.
+4. Set the testbench as the simulation top.
+5. Run Behavioral Simulation.
+6. Check the waveform and verify the expected output.
+
+The D and T flip-flop designs use the active-low reset rstn used in the ECE 128 lecture.
