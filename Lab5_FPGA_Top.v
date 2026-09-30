@@ -31,14 +31,14 @@ SlowClock demo_clock(
     .slow_clk(slow_clk)
 );
 
-SR_Latch sr_latch(
+SR_Latch_FPGA sr_latch(
     .S(sw[0]),
     .R(sw[1]),
     .Q(sr_latch_q),
     .Qbar(sr_latch_qbar)
 );
 
-SR_FlipFlop sr_ff(
+SR_FlipFlop_FPGA sr_ff(
     .R(sw[1]),
     .S(sw[0]),
     .CLK(slow_clk),
