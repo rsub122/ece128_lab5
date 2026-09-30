@@ -20,6 +20,8 @@ The D and T flip-flop designs use the active-low reset rstn convention used in t
 
 - Lab5_FPGA_Top.v
 - SlowClock.v
+- SR_Latch_FPGA.v
+- SR_FlipFlop_FPGA.v
 - Basys3_Lab5.xdc
 
 Lab5_FPGA_Top instantiates the Lab 5 designs and allows the circuit being demonstrated to be selected with SW4-SW2. SW1 and SW0 are the circuit inputs. BTNC is reset. The top module internally converts BTNC to active-low rstn.
@@ -61,3 +63,6 @@ The SR flip-flop, D flip-flops, T flip-flop, and counter use a slow demonstratio
 9. For the 25 MHz divider, the output is too fast to see blinking on an LED. The same 25 MHz signal is routed to JA1 for measurement if lab equipment is available.
 
 The Basys 3 pin mappings in Basys3_Lab5.xdc use the official Digilent Basys 3 master XDC assignments for the 100 MHz clock, switches, LEDs, center push button, and JA1.
+
+
+The SR_Latch_FPGA and SR_FlipFlop_FPGA helper modules are used only for the physical-board demonstration so Vivado does not have to implement the cross-coupled gate-delay simulation models directly. The required SR_Latch.v and SR_FlipFlop.v remain in the repository for the lab simulation work.
